@@ -14,6 +14,7 @@ https://github.com/rytilahti/python-yeelightbt
 
 #### 1. mired value <---> kelvin value
 yeelight color temp ranges : 1700K ~ 6500K
+
 HA mired ranges : 153 ~ 500
 
 `1000000 / 1700 = 588 mired`
@@ -21,6 +22,7 @@ HA mired ranges : 153 ~ 500
 
 #### 2. Light Value <---> HA Light Value
 yeelight light ranges : 0 ~ 100
+
 HA light ranges : 0 ~ 255
 
 ### 1. Shell Command
@@ -51,9 +53,11 @@ Yeelight.sh file will return Light Value as JSON Type.
 ### 3. Template Light
 
 As I commented above, should convert value from Yeelight to HomeAssistant.
+
 (brightness / color_temp)
 
 Also, Despite yeelightbt python script can controll color value.
+
 By the way, I don't need change color. So not added below code.
 
       - platform: template
