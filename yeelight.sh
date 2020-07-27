@@ -13,12 +13,12 @@ function runstate() {
 }
 
 function sendcommand() {
-	value=$(yeelightbt $1 $2 2>&1 | grep is_on)
+	value=$(yeelightbt $1 $2)
 	while [ "$?" != "0" ]
 	do
 		echo "retry yeelight setting..."
 	    sleep 1
-	    value=$(yeelightbt $1 $2 2>&1 | grep is_on)
+	    value=$(yeelightbt $1 $2)
     done
 	
 	case $1 in
