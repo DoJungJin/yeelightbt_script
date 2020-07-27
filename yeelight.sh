@@ -1,21 +1,23 @@
 #!/bin/bash
 
-export YEELIGHTBT_MAC=F8:24:41:E0:00:00
+export YEELIGHTBT_MAC=F8:24:41:E0:92:12
 
 function runstate() {
-	check=2
-	while [[ ${check} -ge 1 ]]
+	mkdir /config/yeelight.run
+	while [[ "$?" -gt 0 ]]
 	do
+		echo "lock fail!!! retrying..."
 		sleep 1
-		check=$(ps -ef | grep "yeelightbt" | grep -v grep | wc -l)
+		mkdir /config/yeelight.run
 	done
 }
 
 function sendcommand() {
 	value=$(yeelightbt $1 $2 2>&1 | grep is_on)
 	while [ "$?" != "0" ]
-    do
-		sleep 1
+	do
+		echo "retry yeelight setting..."
+	    sleep 1
 	    value=$(yeelightbt $1 $2 2>&1 | grep is_on)
     done
 	
@@ -30,6 +32,7 @@ function sendcommand() {
 			echo "$1" > /config/yeelight.power
 			;;
 	esac
+	rm -rf /config/yeelight.run
 }
 
 case $1 in
@@ -66,7 +69,3 @@ esac
 
 
 exit 0
-		
-
-		
-		
