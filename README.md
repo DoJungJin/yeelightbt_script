@@ -28,6 +28,15 @@ yeelight light ranges : 0 ~ 100
 
 HA light ranges : 0 ~ 255
 
+#### 3. White Value <---> RGB Value
+8BIT + 8BIT + 8BIT = 24BIT
+
+6 HEXADECIMALS -->      0x123456 & 0xFF0000 >> 16 --> R
+
+                        0x123456 & 0x00FF00 >> 8 --> G
+                        
+                        0x123456 & 0x0000FF >> 0 --> B
+                        
 ## HomeAssistant Integration
 
 ### 1. Shell Command
