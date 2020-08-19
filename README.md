@@ -2,6 +2,9 @@
 When using yeelight bluetooth besidelamp on HomeAssistant, This Script may help you.
 I am newbie code writing, main skills are copy & paste.
 
+# Changes
+200820 - add setting color value
+
 ## Description
 > dependencies
 
