@@ -7,7 +7,6 @@ I am newbie code writing, main skills are copy & paste.
 
 200820 - add setting color value
 
-# Yeelightbt shell script
 ## dependencies
 
 https://github.com/rytilahti/python-yeelightbt
@@ -21,6 +20,7 @@ yeelight color temp ranges : 1700K ~ 6500K
 HA mired ranges : 153 ~ 500
 
 `1000000 / 1700 = 588 mired`
+
 `1000000 / 6500 = 153 mired`
 
 #### 2. Light Value <---> HA Light Value
